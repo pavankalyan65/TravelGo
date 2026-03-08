@@ -41,7 +41,7 @@ cities = [
 # -------------------------
 
 region = os.getenv("AWS_REGION", "ap-southeast-2")
-sns_topic_arn = "arn:aws:sns:ap-southeast-2:117949646235:TravelGo"
+sns_topic_arn = "SNS_TOPIC_ARN"
 
 AWS_AVAILABLE = True
 
@@ -320,4 +320,5 @@ return redirect("/")
 
 if **name** == "**main**":
 app.run(host="0.0.0.0", port=5000, debug=True)
+
 
