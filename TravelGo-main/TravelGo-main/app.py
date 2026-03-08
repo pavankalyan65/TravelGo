@@ -5,9 +5,8 @@ import random
 import boto3
 import os
 from botocore.exceptions import NoCredentialsError
-from boto3.dynamodb.conditions import Key
 
-app = Flask(__name__)
+app = Flask(**name**)
 app.secret_key = "travelgo_secret"
 
 # -------------------------
@@ -43,7 +42,6 @@ cities = [
 region = os.getenv("AWS_REGION", "ap-southeast-2")
 sns_topic_arn = os.getenv("SNS_TOPIC_ARN")
 
-
 AWS_AVAILABLE = True
 
 try:
@@ -77,7 +75,7 @@ except Exception as e:
 
 # -------------------------
 
-# Routes
+# Home
 
 # -------------------------
 
@@ -191,7 +189,6 @@ if request.method == "POST":
         return "Source and destination cannot be the same"
 
     booking_id = str(uuid.uuid4())
-
     seat = f"S{random.randint(1,40)}"
 
     if transport == "Bus":
@@ -279,48 +276,6 @@ if 'user' not in session:
 
 try:
     bookings_table.update_item(
-        Key={
-            "email": session["user"]
-        },
-        UpdateExpression="SET #s = :s",
-        ConditionExpression="booking_id = :b",
-        ExpressionAttributeNames={"#s": "status"},
-        ExpressionAttributeValues={
-            ":s": "CANCELLED",
-            ":b": booking_id
-        }
-    )
-
-except NoCredentialsError:
-
-    for booking in local_bookings:
-        if booking["booking_id"] == booking_id:
-            booking["status"] = "CANCELLED"
-
-send_notification(f"Booking {booking_id} has been cancelled.")
-
-return redirect("/history")
+        Key={"email": session["user"]},
+        UpdateExpression="SET #s = :
 ```
-
-# -------------------------
-
-# Logout
-
-# -------------------------
-
-@app.route('/logout')
-def logout():
-session.clear()
-return redirect("/")
-
-# -------------------------
-
-# Run App
-
-# -------------------------
-
-if **name** == "**main**":
-app.run(host="0.0.0.0", port=5000, debug=True)
-
-
-
