@@ -31,7 +31,7 @@ cities = [
 # AWS Configuration
 # -------------------------
 region = os.getenv("AWS_REGION", "us-east-1")
-sns_topic_arn = os.getenv("SNS_TOPIC_ARN")
+sns_topic_arn = os.getenv("arn:aws:sns:ap-southeast-2:117949646235:TravelG0")
 
 #AWS_AVAILABLE = True
 
@@ -251,4 +251,5 @@ def logout():
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
