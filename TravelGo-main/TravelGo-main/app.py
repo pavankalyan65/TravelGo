@@ -30,7 +30,7 @@ cities = [
 # -------------------------
 # AWS Configuration
 # -------------------------
-region = os.getenv("AWS_REGION", "us-east-1")
+region = os.getenv("AWS_REGION", ap-southeast-2")
 sns_topic_arn = os.getenv("SNS_TOPIC_ARN")
 
 #AWS_AVAILABLE = True
@@ -165,7 +165,7 @@ def booking():
 
         booking_data = {
             "booking_id": booking_id,
-            "user": session['user'],
+            "email": session['user'],
             "transport": transport,
             "source": source,
             "destination": destination,
@@ -205,14 +205,14 @@ def history():
 
         user_bookings = [
             b for b in response["Items"]
-            if b["user"] == session['user']
+            if b["email"] == session['user']
         ]
 
     except NoCredentialsError:
 
         user_bookings = [
             b for b in local_bookings
-            if b["user"] == session['user']
+            if b["email"] == session['user']
         ]
 
     return render_template("history.html", bookings=user_bookings)
@@ -227,12 +227,15 @@ def cancel_booking(booking_id):
     try:
 
         bookings_table.update_item(
-            Key={"booking_id": booking_id},
+           Key={ "email": session["user"] 
+            },
             UpdateExpression="SET #s = :s",
             ExpressionAttributeNames={"#s": "status"},
-            ExpressionAttributeValues={":s": "CANCELLED"}
+            ExpressionAttributeValues={ 
+                ":s": "CANCELLED",
+                ":b": booking_id 
+            } 
         )
-
     except NoCredentialsError:
 
         for booking in local_bookings:
@@ -251,4 +254,5 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+   app.run(host="0.0.0.0", port=5000, debug=True)
+
