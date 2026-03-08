@@ -30,7 +30,7 @@ cities = [
 # -------------------------
 # AWS Configuration
 # -------------------------
-region = os.getenv("AWS_REGION", ap-southeast-2")
+region = os.getenv("AWS_REGION", "ap-southeast-2")
 sns_topic_arn = os.getenv("SNS_TOPIC_ARN")
 
 #AWS_AVAILABLE = True
@@ -255,4 +255,5 @@ def logout():
 
 if __name__ == "__main__":
    app.run(host="0.0.0.0", port=5000, debug=True)
+
 
