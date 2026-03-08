@@ -7,7 +7,7 @@ import os
 from botocore.exceptions import NoCredentialsError
 from boto3.dynamodb.conditions import Key
 
-app = Flask(**name**)
+app = Flask(__name__)
 app.secret_key = "travelgo_secret"
 
 # -------------------------
@@ -320,3 +320,4 @@ return redirect("/")
 
 if **name** == "**main**":
 app.run(host="0.0.0.0", port=5000, debug=True)
+
