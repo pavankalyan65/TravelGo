@@ -2,22 +2,35 @@
 
 {% block content %}
 
-<div class="form-box">
+<section class="auth-section">
 
-<h2>Create Account</h2>
+<div class="auth-card">
+
+<h1>Create Account</h1>
+
+<p class="auth-subtitle">
+Join TravelGo and start booking your trips easily
+</p>
 
 <form method="POST">
 
-<input type="text" name="name" placeholder="Name">
+<input type="text" name="name" placeholder="Full Name" required>
 
-<input type="email" name="email" placeholder="Email">
+<input type="email" name="email" placeholder="Email Address" required>
 
-<input type="password" name="password" placeholder="Password">
+<input type="password" name="password" placeholder="Password" required>
 
-<button>Register</button>
+<button type="submit">Create Account</button>
 
 </form>
 
+<p class="auth-footer">
+Already have an account?
+<a href="/login">Login</a>
+</p>
+
 </div>
+
+</section>
 
 {% endblock %}
