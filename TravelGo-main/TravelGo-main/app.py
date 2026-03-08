@@ -31,9 +31,7 @@ cities = [
 # AWS Configuration
 # -------------------------
 region = os.getenv("AWS_REGION", "us-east-1")
-sns_topic_arn = os.getenv("arn:aws:sns:ap-southeast-2:117949646235:TravelG0")
-
-#AWS_AVAILABLE = True
+sns_topic_arn = os.getenv("arn:aws:sns:ap-southeast-2:117949646235:TravelGo43:c178b627-597d-472e-90e4-76b6daf3ac8b")
 
 try:
     dynamodb = boto3.resource("dynamodb", region_name=region)
@@ -253,3 +251,4 @@ def logout():
 if __name__ == "__main__":
 
     app.run(debug=True)
+
