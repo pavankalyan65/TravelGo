@@ -2,10 +2,58 @@
 
 {% block content %}
 
-<h2>Welcome to your Dashboard</h2>
+<section class="dashboard">
 
-<a href="/booking" class="btn">Book Travel</a>
+<h1 class="dashboard-title">Welcome to Your Travel Dashboard</h1>
 
-<a href="/history" class="btn">View Booking History</a>
+<p class="dashboard-subtitle">
+Manage your trips, bookings and travel plans easily
+</p>
+
+<div class="dashboard-grid">
+
+<a href="/booking" class="dashboard-card">
+
+<img src="/static/images/plane.png">
+
+<h3>Book Travel</h3>
+
+<p>Book flights, trains, buses or hotels</p>
+
+</a>
+
+<a href="/history" class="dashboard-card">
+
+<img src="/static/images/train.png">
+
+<h3>My Trips</h3>
+
+<p>View your booking history</p>
+
+</a>
+
+<a href="/booking" class="dashboard-card">
+
+<img src="/static/images/bus.png">
+
+<h3>Plan Journey</h3>
+
+<p>Search routes and travel options</p>
+
+</a>
+
+<a href="/logout" class="dashboard-card">
+
+<img src="/static/images/hotel.png">
+
+<h3>Logout</h3>
+
+<p>Sign out from your account</p>
+
+</a>
+
+</div>
+
+</section>
 
 {% endblock %}
