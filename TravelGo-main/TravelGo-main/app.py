@@ -6,7 +6,9 @@ import boto3
 import os
 from botocore.exceptions import NoCredentialsError
 
-app = Flask(**name**)
+
+app = Flask(__name__)
+
 app.secret_key = "travelgo_secret"
 
 # -------------------------
@@ -279,3 +281,4 @@ try:
         Key={"email": session["user"]},
         UpdateExpression="SET #s = :
 ```
+
