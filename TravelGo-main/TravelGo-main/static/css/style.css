@@ -1,21 +1,24 @@
 body{
-font-family: 'Segoe UI', sans-serif;
-background:#ffffff;
+font-family:'Segoe UI',sans-serif;
+background:#f5f7fb;
 margin:0;
 color:#333;
 }
 
+/* NAVBAR */
+
 .navbar{
-background:#0d6efd;
-padding:20px 60px;
+background:linear-gradient(90deg,#3a7bd5,#00d2ff);
+padding:18px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+box-shadow:0 3px 12px rgba(0,0,0,0.1);
 }
 
 .navbar h2{
 color:white;
-padding-right: 15px;
+margin:0;
 }
 
 .navbar a{
@@ -23,67 +26,173 @@ color:white;
 margin-left:20px;
 text-decoration:none;
 font-weight:500;
+transition:0.3s;
+}
+
+.navbar a:hover{
+opacity:0.8;
 }
 
 .nav-links{
 display:flex;
-gap:15px;
-margin-right:15px;
+gap:18px;
 }
 
-.container{
-padding:40px;
-}
+/* HERO */
 
 .hero{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
 text-align:center;
-padding:60px;
+padding:80px 20px;
+background:linear-gradient(180deg,#eef6ff,#ffffff);
 }
 
 .hero h1{
-font-size:40px;
+font-size:44px;
 margin-bottom:10px;
 }
 
-.hero-img{
-width:60%;
-border-radius:10px;
-margin-top:20px;
+.hero p{
+font-size:18px;
+color:#555;
 }
 
-.travel-options{
-display:flex;
-justify-content:center;
-gap:30px;
-margin-top:40px;
+.hero-img{
+width:420px;
+margin-top:30px;
+}
+
+/* CTA BUTTON */
+
+.cta-btn{
+display:inline-block;
+margin-top:20px;
+background:#2563eb;
+color:white;
+padding:12px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.cta-btn:hover{
+background:#1e4ed8;
+transform:translateY(-2px);
+}
+
+/* TRAVEL OPTIONS */
+
+.section-title{
+text-align:center;
+font-size:30px;
+margin-top:60px;
+margin-bottom:30px;
+}
+
+.options-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+max-width:900px;
+margin:auto;
 }
 
 .card{
-background:#eaf4ff;
+background:white;
 padding:25px;
-border-radius:12px;
-width:130px;
+border-radius:14px;
 text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
-box-shadow:0px 4px 15px rgba(0,0,0,0.1);
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
 .card img{
-width:50px;
+width:60px;
 margin-bottom:10px;
 }
+
+.card h3{
+margin:10px 0 5px 0;
+}
+
+.card p{
+font-size:14px;
+color:#666;
+}
+
+/* DESTINATIONS */
+
+.destinations{
+padding:60px 20px;
+background:#f8fbff;
+}
+
+.dest-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:20px;
+max-width:800px;
+margin:auto;
+}
+
+.dest-card{
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:center;
+font-weight:600;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.dest-card:hover{
+background:#2563eb;
+color:white;
+transform:scale(1.05);
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:50px;
+padding:60px 20px;
+background:white;
+}
+
+.stat-box{
+text-align:center;
+}
+
+.stat-box h3{
+font-size:36px;
+color:#2563eb;
+margin:0;
+}
+
+.stat-box p{
+color:#555;
+}
+
+/* FORMS */
 
 .form-box{
 width:360px;
 margin:auto;
-background:#eaf4ff;
+background:white;
 padding:35px;
 border-radius:12px;
-box-shadow:0px 4px 10px rgba(0,0,0,0.05);
+box-shadow:0px 5px 20px rgba(0,0,0,0.08);
 }
 
 input,select{
@@ -95,7 +204,7 @@ border-radius:6px;
 }
 
 button{
-background:#4da6ff;
+background:#2563eb;
 color:white;
 border:none;
 padding:10px;
@@ -103,20 +212,23 @@ margin-top:15px;
 width:100%;
 border-radius:6px;
 font-size:15px;
+cursor:pointer;
 }
 
-button:hover{
-background:#0d6efd;
-}
+button:hover
+
+/* TABLE */
 
 .history-table{
 width:100%;
 margin-top:30px;
 border-collapse:collapse;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 .history-table th{
-background:#0d6efd;
+background:#2563eb;
 color:white;
 padding:12px;
 text-align:center;
@@ -124,13 +236,13 @@ text-align:center;
 
 .history-table td{
 padding:12px;
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #eee;
 text-align:center;
 }
 
-.history-table tr:hover {
-background: #f9fafb;
-}
+.history-table tr:hover
+
+/* BUTTONS */
 
 .btn{
 background:#2563eb;
@@ -138,7 +250,6 @@ color:white;
 padding:8px 15px;
 text-decoration:none;
 border-radius:4px;
-margin-bottom:15px;
 display:inline-block;
 }
 
@@ -149,3 +260,5 @@ padding:6px 10px;
 text-decoration:none;
 border-radius:4px;
 }
+
+.cancel-btn:hover
