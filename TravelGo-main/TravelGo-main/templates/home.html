@@ -2,38 +2,101 @@
 
 {% block content %}
 
-<div class="hero">
+<!-- HERO SECTION -->
 
+<section class="hero">
+
+<div class="hero-content">
 <h1>Plan Your Perfect Journey</h1>
+<p>Book Flights, Trains, Buses and Hotels in seconds</p>
 
-<p>Book Bus, Train, Flights and Hotels easily</p>
+<a href="/booking" class="cta-btn">Start Booking</a>
+
+</div>
 
 <img src="/static/images/travel-bg.jpg" class="hero-img">
 
-<div class="travel-options">
+</section>
+
+<!-- TRAVEL OPTIONS -->
+
+<section class="travel-options">
+
+<h2 class="section-title">Choose Your Travel</h2>
+
+<div class="options-grid">
 
 <div class="card">
 <img src="/static/images/plane.png">
-<p>Flights</p>
+<h3>Flights</h3>
+<p>Book domestic & international flights</p>
 </div>
 
 <div class="card">
 <img src="/static/images/train.png">
-<p>Trains</p>
+<h3>Trains</h3>
+<p>Comfortable train journeys</p>
 </div>
 
 <div class="card">
 <img src="/static/images/bus.png">
-<p>Buses</p>
+<h3>Buses</h3>
+<p>Affordable bus travel</p>
 </div>
 
 <div class="card">
 <img src="/static/images/hotel.png">
-<p>Hotels</p>
+<h3>Hotels</h3>
+<p>Find the best hotels worldwide</p>
 </div>
 
 </div>
 
+</section>
+
+<!-- POPULAR DESTINATIONS -->
+
+<section class="destinations">
+
+<h2 class="section-title">Popular Destinations</h2>
+
+<div class="dest-grid">
+
+<div class="dest-card">Goa</div>
+<div class="dest-card">Delhi</div>
+<div class="dest-card">Mumbai</div>
+<div class="dest-card">Bangalore</div>
+<div class="dest-card">Hyderabad</div>
+<div class="dest-card">Chennai</div>
+
 </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-box">
+<h3>10K+</h3>
+<p>Happy Travelers</p>
+</div>
+
+<div class="stat-box">
+<h3>500+</h3>
+<p>Routes</p>
+</div>
+
+<div class="stat-box">
+<h3>50+</h3>
+<p>Cities</p>
+</div>
+
+<div class="stat-box">
+<h3>24/7</h3>
+<p>Support</p>
+</div>
+
+</section>
 
 {% endblock %}
